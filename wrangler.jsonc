@@ -1,0 +1,38 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // One Worker for every stage. See docs/workflow.md.
+  //
+  //   main     -> wrangler deploy   -> tonup.app (+ www redirect)          public
+  //   staging  -> Preview "staging" -> staging.preview.tonup.app           Access
+  //   develop  -> Preview "dev"     -> dev.preview.tonup.app               Access
+  //   feature  -> Preview <branch>  -> <branch>.preview.tonup.app          Access
+  //
+  // Previews are made by `pnpm preview:branch` (scripts/preview.ts).
+  // The static build (out/) is identical everywhere; the Worker works out
+  // the stage from SITE_ENV and the hostname (noindex, ribbon, www redirect).
+  "name": "tonup-site",
+  "compatibility_date": "2026-10-01",
+  "main": "worker/index.ts",
+  "assets": {
+    "directory": "./out",
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "html_handling": "drop-trailing-slash",
+    "run_worker_first": true
+  },
+  "observability": { "enabled": false },
+
+  // Only the custom domains below; no *.workers.dev addresses at all.
+  "workers_dev": false,
+  "preview_urls": false,
+
+  "routes": [
+    { "pattern": "tonup.app", "custom_domain": true },
+    { "pattern": "www.tonup.app", "custom_domain": true },
+    // Previews only: <preview-name>.preview.tonup.app
+    { "pattern": "preview.tonup.app", "custom_domain": true, "previews_enabled": true, "enabled": false }
+  ],
+
+  "vars": { "SITE_ENV": "production" },
+  "previews": { "vars": { "SITE_ENV": "preview" } }
+}

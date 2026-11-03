@@ -1,0 +1,190 @@
+.head {
+  padding-block: 88px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.headText {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 760px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.legend > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 24px;
+}
+
+.jump a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid #8e8c86;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.jump a:hover {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.families {
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.family {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  scroll-margin-top: 24px;
+}
+
+.familyHead {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  align-items: baseline;
+  border-bottom: 2px solid var(--ink);
+  padding-bottom: 12px;
+}
+
+.familyHead h2 {
+  font-size: 32px;
+}
+
+.familyHead p {
+  color: var(--faint);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.practice {
+  margin-top: 112px;
+  scroll-margin-top: 0;
+}
+
+.practiceInner {
+  padding-block: 104px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+
+.nightKicker {
+  font-family: var(--font-mono), monospace;
+  font-size: 14px;
+  color: var(--chalk);
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.groupTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--chalk-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.groupCount {
+  color: var(--chalk);
+}
+
+.drillOpen,
+.drillPro,
+.tool {
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.drillOpen {
+  border: 1px solid var(--night-line);
+}
+
+.drillPro {
+  background: var(--night-card);
+}
+
+.tool {
+  border: 1.5px solid var(--accent);
+}
+
+.drillOpen h4,
+.drillPro h4,
+.tool h4 {
+  font-size: 20px;
+}
+
+.focus {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--chalk-muted);
+  text-transform: uppercase;
+}
+
+.drillBody {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--chalk-soft);
+}
+
+.tools {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 16px;
+}
+
+.footRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--night-line);
+  padding-top: 32px;
+  font-size: 18px;
+  color: var(--chalk-soft);
+}
