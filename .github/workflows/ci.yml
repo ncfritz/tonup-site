@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [develop, staging, main]
+
+permissions:
+  contents: read
+
+jobs:
+  # Promotions only move one step at a time (see docs/workflow.md):
+  #   develop  <- feature/*, fix/*, chore/*, docs/*, and back-merges from staging
+  #   staging  <- develop, hotfix/*, and back-merges from main
+  #   main     <- staging, hotfix/*
+  promotion-guard:
+    name: Promotion guard
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check source branch is allowed for this target
+        env:
+          BASE: ${{ github.base_ref }}
+          HEAD: ${{ github.head_ref }}
+        run: |
+          ok=false
+          case "$BASE" in
+            main)    [[ "$HEAD" == staging || "$HEAD" == hotfix/* ]] && ok=true ;;
+            staging) [[ "$HEAD" == develop || "$HEAD" == main || "$HEAD" == hotfix/* ]] && ok=true ;;
+            develop) [[ "$HEAD" =~ ^(feature|fix|chore|docs)/ || "$HEAD" == staging ]] && ok=true ;;
+            *)       ok=true ;;
+          esac
+          if [[ "$ok" != true ]]; then
+            echo "::error::A PR into '$BASE' can't come from '$HEAD'. See docs/workflow.md."
+            exit 1
+          fi
+          echo "'$HEAD' -> '$BASE' is allowed."
+
+  checks:
+    name: Lint, typecheck, test, build
+    runs-on: ubuntu-latest
+    env:
+      NEXT_TELEMETRY_DISABLED: 1
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+      - name: Build the production variant
+        run: pnpm build
+        env:
+          DEPLOY_TARGET: production

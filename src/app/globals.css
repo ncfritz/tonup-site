@@ -1,0 +1,98 @@
+/* Oche: chalk-paper ground, ink type, one oche-red accent.
+   Text pairs checked: ink/bg 17:1, muted/bg 7.4:1, faint/bg 5.8:1,
+   accent/bg 5.4:1, white/accent 5.9:1, chalk-muted/ink 9.6:1. */
+:root {
+  --bg: #f4f3ef;
+  --card: #ffffff;
+  --ink: #111111;
+  --muted: #44433f;
+  --faint: #5c5b56;
+  --line: #d6d4cc;
+  --accent: #c8102e;
+  --on-accent: #ffffff;
+  --night: #111111;
+  --night-card: #1c1c1b;
+  --night-line: #3a3a38;
+  --chalk: #f4f3ef;
+  --chalk-muted: #bdbbb4;
+  --chalk-soft: #dad8d1;
+  --max: 1240px;
+  --gutter: 24px;
+  --radius: 20px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+img,
+svg {
+  display: block;
+}
+
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -60px;
+  z-index: 10;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: var(--bg);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 12px;
+  color: var(--bg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,150 @@
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 20px;
+  padding-bottom: 96px;
+}
+
+.plan,
+.planPro {
+  border-radius: 24px;
+  padding: clamp(24px, 6vw, 40px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--card);
+}
+
+.planPro {
+  background: var(--night);
+  color: var(--chalk);
+}
+
+.planName {
+  font-size: 22px;
+}
+
+.planSub {
+  margin-top: 6px;
+  font-size: 15px;
+  color: var(--faint);
+}
+
+.planPro .planSub,
+.planNote {
+  color: var(--chalk-muted);
+}
+
+.planPrice {
+  font-family: var(--font-mono), monospace;
+  font-size: clamp(44px, 12vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.planProBody {
+  color: var(--chalk-soft);
+}
+
+.planNote {
+  margin-top: auto;
+  font-size: 14px;
+}
+
+.planAction {
+  margin-top: auto;
+}
+
+.compare {
+  padding-bottom: 96px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.tableBox {
+  position: relative;
+  max-width: 100%;
+  overflow-x: auto;
+  border-top: 2px solid var(--ink);
+}
+
+.table {
+  width: 100%;
+  min-width: 480px;
+  border-collapse: collapse;
+  font-size: 16px;
+}
+
+.table th,
+.table td {
+  text-align: left;
+  padding: 16px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+.table th:first-child {
+  padding-left: 0;
+  font-weight: 400;
+  width: 56%;
+}
+
+.table thead th {
+  font-weight: 700;
+  border-bottom: 1px solid var(--line);
+}
+
+.table thead th:first-child {
+  font-weight: 500;
+  color: var(--faint);
+}
+
+.proHead {
+  color: var(--accent);
+}
+
+.table .group {
+  padding: 32px 0 10px;
+  font-family: var(--font-mono), monospace;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.yes {
+  display: inline-flex;
+  color: var(--ink);
+}
+
+.no {
+  color: var(--faint);
+}
+
+.partial {
+  font-size: 15px;
+  color: var(--faint);
+}
+
+.seeAll {
+  font-weight: 500;
+}
+
+.notes {
+  padding-bottom: 112px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+  gap: 32px;
+}
+
+.notes > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.notes h3 {
+  font-size: 20px;
+}

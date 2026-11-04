@@ -1,0 +1,216 @@
+.phone {
+  width: 280px;
+  height: 580px;
+  flex: none;
+  border-radius: 44px;
+  background: var(--ink);
+  padding: 12px;
+}
+
+.screen {
+  height: 100%;
+  border-radius: 34px;
+  background: #ffffff;
+  padding: 36px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow: hidden;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.meta,
+.small {
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  color: var(--faint);
+}
+
+.small {
+  font-family: var(--font-body), sans-serif;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.players {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.player,
+.playerOn {
+  border-radius: 14px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.playerOn {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.player span,
+.playerOn span {
+  font-size: 12px;
+  color: var(--faint);
+}
+
+.playerOn span {
+  color: var(--chalk-muted);
+}
+
+.player strong,
+.playerOn strong {
+  font-family: var(--font-mono), monospace;
+  font-size: 36px;
+  line-height: 1.05;
+}
+
+.checkout {
+  border-radius: 14px;
+  border: 1.5px solid var(--accent);
+  padding: 8px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.checkout span {
+  font-size: 12px;
+  color: var(--faint);
+}
+
+.checkout strong {
+  font-family: var(--font-mono), monospace;
+  font-size: 17px;
+  color: var(--accent);
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.visit {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: auto;
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.visit span {
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 10px;
+  background: var(--bg);
+}
+
+.visit .slotEmpty {
+  color: var(--faint);
+}
+
+.doubles {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 6px;
+  font-family: var(--font-mono), monospace;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.doubles span {
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 8px;
+}
+
+.hit {
+  background: var(--ink);
+  color: #ffffff;
+}
+
+.next {
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+}
+
+.todo {
+  background: var(--bg);
+}
+
+.panel {
+  border-radius: 14px;
+  background: var(--bg);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 90px;
+}
+
+.bar,
+.barNow {
+  flex: 1;
+  border-radius: 4px;
+  background: #bdbbb4;
+}
+
+.barNow {
+  background: var(--accent);
+}
+
+.footRow {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.footRow strong {
+  font-family: var(--font-mono), monospace;
+  font-size: 28px;
+}
+
+.rules {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.rules b {
+  color: var(--ink);
+}
+
+.dispute {
+  margin-top: auto;
+  border-radius: 14px;
+  border: 1.5px solid var(--accent);
+  padding: 12px 14px;
+  font-size: 14px;
+}
+
+.dispute span {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent);
+}
