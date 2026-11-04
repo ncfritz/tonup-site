@@ -31,6 +31,9 @@ pnpm lint && pnpm typecheck && pnpm test
 - **App screens**: `src/components/Phones.tsx` draws three app screens
   (scoring on the board, a drill, a rules page). They're illustrations; swap
   in real screenshots once the app's UI is final.
+- **Themes**: light and dark, from the same tokens in `src/app/globals.css`.
+  The header switch offers Match system, Light and Dark; the pick is kept in
+  `localStorage` and applied before first paint (`src/lib/theme.ts`).
 - **Fonts**: Space Grotesk and JetBrains Mono are bundled from `src/fonts`
   (OFL), so the site makes no requests to Google. `src/fonts/og/` holds the
   `.woff` files the generated social image uses.

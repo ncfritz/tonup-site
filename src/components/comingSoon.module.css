@@ -8,6 +8,14 @@
   padding-block: 32px;
 }
 
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -41,7 +49,7 @@
   margin-top: 8px;
   padding: 14px 24px;
   border-radius: 999px;
-  background: var(--accent);
+  background: var(--accent-fill);
   color: var(--on-accent);
   font-family: var(--font-mono), monospace;
   font-size: 15px;
