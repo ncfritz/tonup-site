@@ -4,7 +4,7 @@ export function Mark({ size = 28, ink = "currentColor" }: { size?: number; ink?:
     <svg width={size} height={size} viewBox="0 0 28 28" aria-hidden="true">
       <circle cx="14" cy="14" r="12" fill="none" stroke={ink} strokeWidth="2" />
       <circle cx="14" cy="14" r="6" fill="none" stroke={ink} strokeWidth="2" />
-      <circle cx="14" cy="14" r="2" fill="var(--accent, #c8102e)" />
+      <circle cx="14" cy="14" r="2" fill="var(--accent-fill, #c8102e)" />
     </svg>
   );
 }

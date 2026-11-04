@@ -240,8 +240,8 @@
 
 .cta {
   border-radius: 32px;
-  background: var(--accent);
-  color: #ffffff;
+  background: var(--accent-fill);
+  color: var(--on-accent);
   padding: 72px 48px;
   display: flex;
   flex-wrap: wrap;

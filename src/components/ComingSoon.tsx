@@ -1,4 +1,5 @@
 import { Mark } from "./Logo";
+import { ThemeSwitch } from "./ThemeSwitch";
 import u from "./ui.module.css";
 import c from "./comingSoon.module.css";
 
@@ -6,10 +7,13 @@ import c from "./comingSoon.module.css";
 export function ComingSoon() {
   return (
     <main id="main" className={`${u.wrap} ${c.page}`}>
-      <p className={c.brand}>
-        <Mark size={32} />
-        Ton Up
-      </p>
+      <div className={c.top}>
+        <p className={c.brand}>
+          <Mark size={32} />
+          Ton Up
+        </p>
+        <ThemeSwitch />
+      </div>
       <div className={c.body}>
         <p className={u.kicker}>T20 · T20 · T20 =</p>
         <p className={c.score} aria-hidden="true">

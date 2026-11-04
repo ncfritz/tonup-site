@@ -1,15 +1,29 @@
 /* Oche: chalk-paper ground, ink type, one oche-red accent.
-   Text pairs checked: ink/bg 17:1, muted/bg 7.4:1, faint/bg 5.8:1,
-   accent/bg 5.4:1, white/accent 5.9:1, chalk-muted/ink 9.6:1. */
+   Two themes. <html data-theme="light|dark"> forces one (set from the
+   visitor's pick before first paint, see src/lib/theme.ts); with no attribute the
+   site follows the system setting.
+
+   --accent is for text and lines; --accent-fill is for filled shapes with
+   --on-accent text on them. They're the same red in light; dark lifts the
+   text red so it stays readable on the dark ground.
+   Text pairs checked (WCAG):
+     light: ink/bg 17:1, muted/bg 8.9:1, faint/bg 6.1:1, accent/bg 5.3:1
+     dark:  ink/bg 16:1, muted/bg 10:1,  faint/bg 6.9:1, accent/bg 6.8:1
+     both:  on-accent/accent-fill 5.9:1, chalk-muted/night-card 7.9:1 */
 :root {
+  color-scheme: light;
   --bg: #f4f3ef;
   --card: #ffffff;
   --ink: #111111;
   --muted: #44433f;
   --faint: #5c5b56;
   --line: #d6d4cc;
+  --bar: #bdbbb4;
   --accent: #c8102e;
+  --accent-fill: #c8102e;
+  --accent-fill-hover: #a50d26;
   --on-accent: #ffffff;
+  --frame: #111111;
   --night: #111111;
   --night-card: #1c1c1b;
   --night-line: #3a3a38;
@@ -19,6 +33,48 @@
   --max: 1240px;
   --gutter: 24px;
   --radius: 20px;
+}
+
+/* Dark tokens, used when the visitor picks Dark, or picks nothing and the
+   system is dark. Keep the two blocks identical. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #121211;
+  --card: #1c1c1a;
+  --ink: #f1efe8;
+  --muted: #c4c2ba;
+  --faint: #9f9d96;
+  --line: #33322f;
+  --bar: #4a4945;
+  --accent: #ff6b7d;
+  --accent-fill: #c8102e;
+  --accent-fill-hover: #de1f3e;
+  --on-accent: #ffffff;
+  --frame: #2c2c2a;
+  --night: #1c1c1a;
+  --night-card: #262624;
+  --night-line: #3a3a38;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #121211;
+    --card: #1c1c1a;
+    --ink: #f1efe8;
+    --muted: #c4c2ba;
+    --faint: #9f9d96;
+    --line: #33322f;
+    --bar: #4a4945;
+    --accent: #ff6b7d;
+    --accent-fill: #c8102e;
+    --accent-fill-hover: #de1f3e;
+    --on-accent: #ffffff;
+    --frame: #2c2c2a;
+    --night: #1c1c1a;
+    --night-card: #262624;
+    --night-line: #3a3a38;
+  }
 }
 
 *,
