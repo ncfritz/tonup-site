@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { AppStoreButton } from "@/components/AppStoreButton";
 import { TierBadge } from "@/components/Badge";
+import { OneEighty } from "@/components/OneEighty";
 import { PracticeScreen, RulesScreen, ScoreScreen } from "@/components/Phones";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
 import u from "@/components/ui.module.css";
@@ -34,9 +35,7 @@ export default function FullHome() {
         <section className={`${u.wrap} ${h.hero}`}>
           <div className={h.heroScore}>
             <p className={u.kicker}>T20 · T20 · T20 =</p>
-            <p className={h.oneEighty} aria-hidden="true">
-              180
-            </p>
+            <OneEighty className={h.oneEighty} />
           </div>
           <div className={h.heroText}>
             <h1 className={h.heroTitle}>A darts scorer that takes the game seriously.</h1>

@@ -1,0 +1,16 @@
+/* Font size comes from the page; the board is sized in em to match the
+   digits' cap height and sits on their baseline. */
+.score {
+  font-family: var(--font-mono), monospace;
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  white-space: nowrap;
+}
+
+.board {
+  display: inline-block;
+  vertical-align: baseline;
+  margin: 0 0.02em 0 0.045em;
+  letter-spacing: 0;
+}

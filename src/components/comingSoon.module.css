@@ -32,11 +32,7 @@
 }
 
 .score {
-  font-family: var(--font-mono), monospace;
-  font-weight: 700;
   font-size: clamp(120px, 24vw, 300px);
-  line-height: 0.85;
-  letter-spacing: -0.04em;
 }
 
 .title {
