@@ -3,14 +3,14 @@
   height: 580px;
   flex: none;
   border-radius: 44px;
-  background: var(--ink);
+  background: var(--frame);
   padding: 12px;
 }
 
 .screen {
   height: 100%;
   border-radius: 34px;
-  background: #ffffff;
+  background: var(--card);
   padding: 36px 18px 18px;
   display: flex;
   flex-direction: column;
@@ -53,7 +53,7 @@
 
 .playerOn {
   background: var(--ink);
-  color: #ffffff;
+  color: var(--bg);
 }
 
 .player span,
@@ -63,7 +63,7 @@
 }
 
 .playerOn span {
-  color: var(--chalk-muted);
+  color: color-mix(in srgb, var(--bg) 72%, var(--ink));
 }
 
 .player strong,
@@ -138,7 +138,7 @@
 
 .hit {
   background: var(--ink);
-  color: #ffffff;
+  color: var(--bg);
 }
 
 .next {
@@ -170,11 +170,11 @@
 .barNow {
   flex: 1;
   border-radius: 4px;
-  background: #bdbbb4;
+  background: var(--bar);
 }
 
 .barNow {
-  background: var(--accent);
+  background: var(--accent-fill);
 }
 
 .footRow {

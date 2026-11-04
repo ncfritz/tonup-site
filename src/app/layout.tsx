@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { comingSoon } from "@/lib/mode";
 import { site } from "@/lib/site";
+import { THEME_SCRIPT } from "@/lib/theme";
 import "./globals.css";
 
 // Fonts are bundled with the site (no requests to Google): Space Grotesk for
@@ -44,13 +45,21 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f4f3ef",
-  colorScheme: "light",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f3ef" },
+    { media: "(prefers-color-scheme: dark)", color: "#121211" },
+  ],
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${body.variable} ${mono.variable}`}>
+    // data-theme is set by THEME_SCRIPT before React hydrates.
+    <html lang="en" className={`${body.variable} ${mono.variable}`} suppressHydrationWarning>
+      <head>
+        {/* The visitor's theme pick, applied before first paint so there's no flash. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+      </head>
       <body>
         <a href="#main" className="skip-link">
           Skip to content

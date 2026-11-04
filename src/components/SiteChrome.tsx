@@ -2,6 +2,7 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import { AppStoreButton } from "./AppStoreButton";
 import { Mark } from "./Logo";
+import { ThemeSwitch } from "./ThemeSwitch";
 import u from "./ui.module.css";
 
 type Page = "home" | "games" | "pricing";
@@ -27,6 +28,9 @@ export function SiteHeader({ current }: { current?: Page }) {
           ))}
           <AppStoreButton variant="nav" />
         </nav>
+        <div className={u.headerTheme}>
+          <ThemeSwitch />
+        </div>
       </div>
     </header>
   );

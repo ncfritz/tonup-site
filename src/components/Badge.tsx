@@ -6,7 +6,7 @@ export function TierBadge({ tier }: { tier: Tier }) {
   if (tier === "pro") {
     return (
       <span className={u.badgePro}>
-        <Lock color="#ffffff" />
+        <Lock />
         PRO
       </span>
     );

@@ -89,12 +89,12 @@
 }
 
 .btn {
-  background: var(--accent);
+  background: var(--accent-fill);
   color: var(--on-accent);
 }
 
 .btn:hover {
-  background: #a50d26;
+  background: var(--accent-fill-hover);
   color: var(--on-accent);
 }
 
@@ -114,7 +114,7 @@
 }
 
 .btnDark:hover {
-  background: #333;
+  background: color-mix(in srgb, var(--ink) 82%, var(--bg));
   color: var(--bg);
 }
 
@@ -153,7 +153,7 @@
 
 .badgePro {
   background: var(--ink);
-  color: #ffffff;
+  color: var(--bg);
 }
 
 /* Cards and grids */
@@ -201,7 +201,7 @@
 }
 
 .night a:hover {
-  color: #ffffff;
+  color: var(--chalk);
 }
 
 .night .lede,
@@ -221,7 +221,6 @@
   flex-wrap: wrap;
   gap: 12px 16px;
   align-items: center;
-  justify-content: space-between;
 }
 
 .brand {
@@ -235,6 +234,7 @@
 }
 
 .nav {
+  margin-left: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 4px 8px;
@@ -268,8 +268,21 @@
 }
 
 .navCta:hover {
-  background: #333;
+  background: color-mix(in srgb, var(--ink) 82%, var(--bg));
   color: var(--bg);
+}
+
+/* Phones: theme switch on the brand row, links on their own row below. */
+@media (max-width: 640px) {
+  .headerTheme {
+    margin-left: auto;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    margin-left: -10px;
+  }
 }
 
 /* Footer */
