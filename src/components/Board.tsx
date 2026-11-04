@@ -33,8 +33,17 @@ export function Board({
   paper = "#f4f3ef",
   accent = "#c8102e",
   ring = "#5c5b56",
+  rim,
+  dartRadius = 9,
+  className,
 }: {
-  size?: number;
+  /** Pixels, or any CSS length (e.g. "0.74em" to size it with the text around it). */
+  size?: number | string;
+  /** The outer ring behind the numbers. Defaults to `ink`. */
+  rim?: string;
+  /** Marker size in board millimetres. */
+  dartRadius?: number;
+  className?: string;
   darts?: Dart[];
   ink?: string;
   paper?: string;
@@ -43,8 +52,8 @@ export function Board({
 }) {
   const span = 18;
   return (
-    <svg width={size} height={size} viewBox="-200 -200 400 400" aria-hidden="true">
-      <circle r="200" fill={ink} />
+    <svg width={size} height={size} viewBox="-200 -200 400 400" aria-hidden="true" className={className}>
+      <circle r="200" fill={rim ?? ink} />
       {ORDER.map((n, i) => {
         const a1 = i * span - span / 2;
         const a2 = a1 + span;
@@ -71,8 +80,8 @@ export function Board({
         const [x, y] = polar(d.r, idx * span + (d.offset ?? 0));
         return (
           <g key={i}>
-            <circle cx={x} cy={y} r="9" fill="#ffffff" stroke={ink} strokeWidth="3" />
-            <circle cx={x} cy={y} r="3" fill={ink} />
+            <circle cx={x} cy={y} r={dartRadius} fill="#ffffff" stroke={ink} strokeWidth={dartRadius / 2.6} />
+            <circle cx={x} cy={y} r={dartRadius / 3} fill={ink} />
           </g>
         );
       })}

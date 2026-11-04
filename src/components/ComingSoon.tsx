@@ -1,4 +1,5 @@
 import { Mark } from "./Logo";
+import { OneEighty } from "./OneEighty";
 import { ThemeSwitch } from "./ThemeSwitch";
 import u from "./ui.module.css";
 import c from "./comingSoon.module.css";
@@ -16,9 +17,7 @@ export function ComingSoon() {
       </div>
       <div className={c.body}>
         <p className={u.kicker}>T20 · T20 · T20 =</p>
-        <p className={c.score} aria-hidden="true">
-          180
-        </p>
+        <OneEighty className={c.score} />
         <h1 className={c.title}>A darts scorer, trainer and rule book for iPhone.</h1>
         <p className={u.lede}>Score 26 games, practise with drills that track your progress, and settle rules arguments before they start.</p>
         <p className={c.soon}>Coming soon to the App Store</p>

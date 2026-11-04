@@ -12,11 +12,7 @@
 }
 
 .oneEighty {
-  font-family: var(--font-mono), monospace;
-  font-weight: 700;
   font-size: clamp(120px, 22vw, 320px);
-  line-height: 0.85;
-  letter-spacing: -0.04em;
   margin-top: 8px;
 }
 
